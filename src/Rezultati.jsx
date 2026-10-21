@@ -28,7 +28,13 @@ const tipovi = ["Sve", "Državno", "Međunarodno", "Reprezentacija", "Klupski us
 
 export default function Rezultati(){
   const [tip,setTip]=useState("Sve"); const [q,setQ]=useState("");
-  const prikaz=useMemo(()=>rezultati.filter(r=>(tip==="Sve"||r.tip===tip)&&`${r.godina} ${r.naslov} ${r.detalj}`.toLowerCase().includes(q.toLowerCase())),[tip,q]);
+  const prikaz=useMemo(() => rezultati
+    .filter(r => (tip === "Sve" || r.tip === tip) && `${r.godina} ${r.naslov} ${r.detalj}`.toLowerCase().includes(q.toLowerCase()))
+    .sort((a, b) => {
+      const godinaA = Math.max(...(a.godina.match(/\d{4}/g) || ["0"]).map(Number));
+      const godinaB = Math.max(...(b.godina.match(/\d{4}/g) || ["0"]).map(Number));
+      return godinaB - godinaA;
+    }), [tip, q]);
   return <main className="results-page">
     <header className="results-hero"><div className="results-container"><p className="results-kicker">SPORTSKA ARHIVA</p><h1>Rezultati</h1><p>Izbor značajnijih državnih i međunarodnih rezultata Streličarskog kluba Rijeka, sastavljen iz sačuvanih klupskih materijala i izvještaja.</p></div></header>
     <section className="results-section results-container">
