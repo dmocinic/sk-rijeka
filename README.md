@@ -1,37 +1,26 @@
-# Streličarski klub Rijeka
+# Automatsko slanje prijave e-mailom
 
-React/Vite projekt pripremljen za GitHub i Cloudflare Pages.
+## Datoteke
 
-## Lokalno pokretanje
+- `src/ProbniTrening.jsx`
+- `src/probni-trening.css`
+- `functions/api/probni-trening.js`
 
-```bash
-npm install
-npm run dev
-```
+Cloudflare Pages automatski objavljuje datoteke iz mape `functions` kao Pages Functions. Endpoint obrasca je `/api/probni-trening`.
 
-## Izgradnja
+## Resend postavljanje
 
-```bash
-npm run build
-```
+1. Otvorite Resend račun.
+2. U Resendu dodajte i verificirajte domenu `sk-rijeka.hr` prema DNS zapisima koje Resend prikaže.
+3. U Resendu izradite API ključ.
+4. U Cloudflare projektu `sk-rijeka` otvorite Settings > Environment variables and secrets.
+5. Dodajte tajnu `RESEND_API_KEY` i kao vrijednost unesite Resend API ključ.
+6. Pokrenite novi deployment na grani na kojoj testirate.
 
-Izlazna mapa je `dist`.
+Funkcija šalje s adrese `prijave@sk-rijeka.hr` na `strelicarski.klub.rijeka@gmail.com`, a Reply-To postavlja na adresu osobe koja se prijavila.
 
-## Cloudflare Pages postavke
+## Važno
 
-- Framework preset: `Vite`
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: `/`
-
-## Prije javne objave
-
-1. U `src/App.jsx` zamijenite raspored treninga, Facebook poveznicu, lokaciju treninga i FAQ odgovore.
-2. Dodajte stvarne vijesti i rezultate.
-3. Obrazac je demonstracijski i ne šalje niti sprema podatke. Povežite ga s odabranim obrascem/backendom prije korištenja.
-4. Dovršite politiku privatnosti prema stvarnoj obradi osobnih podataka.
-5. Po potrebi dodajte logo i fotografije u mapu `public`.
-
-## Domena
-
-Projekt je pripremljen za domenu `sk-rijeka.hr`.
+- API ključ nikada ne unosite u React datoteke niti u GitHub.
+- Prije javne objave dovršite Politiku privatnosti.
+- Preporučljivo je naknadno dodati Cloudflare Turnstile radi dodatne zaštite od automatiziranih prijava.
