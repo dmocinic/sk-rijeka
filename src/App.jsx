@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X, Target, History, Users, Home, Mail, Phone, Facebook } from "lucide-react";
+import { Menu, X, Target, History, Users, Home, Mail, Phone, ExternalLink } from "lucide-react";
 import Povijest from "./Povijest.jsx";
 import Uprava from "./Uprava.jsx";
 import "./app.css";
@@ -74,7 +74,7 @@ function Pocetna() {
             <a href="mailto:strelicarski.klub.rijeka@gmail.com"><Mail /> strelicarski.klub.rijeka@gmail.com</a>
             <a href="tel:+385977733189"><Phone /> 097 773 3189</a>
             <a href="tel:+38598442264"><Phone /> 098 442 264</a>
-            <a href="https://www.facebook.com/profile.php?id=100054633660964" target="_blank" rel="noreferrer"><Facebook /> Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100054633660964" target="_blank" rel="noreferrer"><ExternalLink /> Facebook</a>
           </div>
         </div>
       </section>
