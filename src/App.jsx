@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X, Target, History, Users, Home, Mail, Phone, ExternalLink, CalendarDays, UserPlus } from "lucide-react";
+import { Menu, X, Target, History, Users, Home, Mail, Phone, ExternalLink, CalendarDays, UserPlus, ShieldCheck } from "lucide-react";
 import Povijest from "./Povijest.jsx";
 import Uprava from "./Uprava.jsx";
 import Treninzi from "./Treninzi.jsx";
 import ProbniTrening from "./ProbniTrening.jsx";
+import PolitikaPrivatnosti from "./PolitikaPrivatnosti.jsx";
 import "./app.css";
 
 const routes = {
@@ -12,6 +13,7 @@ const routes = {
   uprava: "Uprava",
   treninzi: "Treninzi",
   "probni-trening": "Prijavi se",
+  privatnost: "Politika privatnosti",
 };
 
 function getRoute() {
@@ -83,7 +85,7 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
-  const content = route === "povijest" ? <Povijest /> : route === "uprava" ? <Uprava /> : route === "treninzi" ? <Treninzi /> : route === "probni-trening" ? <ProbniTrening /> : <Pocetna />;
+  const content = route === "povijest" ? <Povijest /> : route === "uprava" ? <Uprava /> : route === "treninzi" ? <Treninzi /> : route === "probni-trening" ? <ProbniTrening /> : route === "privatnost" ? <PolitikaPrivatnosti /> : <Pocetna />;
 
   return (
     <div className="app-site">
@@ -102,7 +104,7 @@ export default function App() {
         {menuOpen && <nav className="app-mobile-nav" aria-label="Mobilna navigacija"><a href="#/pocetna"><Home /> Početna</a><a href="#/povijest"><History /> Povijest</a><a href="#/uprava"><Users /> Uprava</a><a href="#/treninzi"><CalendarDays /> Treninzi</a><a href="#/probni-trening"><UserPlus /> Prijavi se</a></nav>}
       </header>
       {content}
-      <footer className="app-footer"><div className="app-shell app-footer-inner"><div><strong>Streličarski klub Rijeka</strong><small>Osnovan 25. prosinca 1974.</small></div><nav><a href="#/pocetna">Početna</a><a href="#/povijest">Povijest</a><a href="#/uprava">Uprava</a><a href="#/treninzi">Treninzi</a><a href="#/probni-trening">Prijavi se</a></nav><small>© {new Date().getFullYear()} Streličarski klub Rijeka</small></div></footer>
+      <footer className="app-footer"><div className="app-shell app-footer-inner"><div><strong>Streličarski klub Rijeka</strong><small>Osnovan 25. prosinca 1974.</small></div><nav><a href="#/pocetna">Početna</a><a href="#/povijest">Povijest</a><a href="#/uprava">Uprava</a><a href="#/treninzi">Treninzi</a><a href="#/probni-trening">Prijavi se</a><a href="#/privatnost">Politika privatnosti</a></nav><small>© {new Date().getFullYear()} Streličarski klub Rijeka</small></div></footer>
     </div>
   );
 }

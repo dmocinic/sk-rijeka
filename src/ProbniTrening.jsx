@@ -40,10 +40,10 @@ export default function ProbniTrening() {
         <div className="trial-form-grid"><label>Telefon<input name="telefon" type="tel" value={form.telefon} onChange={update} autoComplete="tel" maxLength="50" /></label><label>Prethodno iskustvo<select name="iskustvo" value={form.iskustvo} onChange={update}><option>Ne</option><option>Da</option></select></label></div>
         <label>Poruka / napomena<textarea name="poruka" value={form.poruka} onChange={update} rows="5" maxLength="1500" /></label>
         <label className="trial-web" aria-hidden="true">Web<input name="web" tabIndex="-1" autoComplete="off" value={form.web} onChange={update} /></label>
-        <label className="trial-consent"><input required name="privola" type="checkbox" checked={form.privola} onChange={update} /><span>Suglasan/na sam da se navedeni podaci koriste radi odgovora na moj upit o probnom treningu i članstvu.</span></label>
+        <label className="trial-consent"><input required name="privola" type="checkbox" checked={form.privola} onChange={update} /><span>Suglasan/na sam da se navedeni podaci koriste radi odgovora na moj upit o probnom treningu i članstvu, u skladu s <a href="#/privatnost">Politikom privatnosti</a>.</span></label>
         <button type="submit" disabled={sending}>{sending ? "Slanje…" : "Pošalji prijavu"}</button>
         {status.message && <p className={`trial-status ${status.type}`} role="status">{status.message}</p>}
-        <p className="trial-form-note">Podaci se šalju klubu e-mailom i ne spremaju se u bazu ove web-stranice.</p>
+        <p className="trial-form-note">Podaci se šalju klubu e-mailom i ne spremaju se u zasebnu bazu ove web-stranice.</p>
       </form>
     </div></section>
   </main>;
