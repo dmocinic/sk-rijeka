@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X, Target, History, Users, Home, Mail, Phone, ExternalLink, CalendarDays } from "lucide-react";
+import { Menu, X, Target, History, Users, Home, Mail, Phone, ExternalLink, CalendarDays, UserPlus } from "lucide-react";
 import Povijest from "./Povijest.jsx";
 import Uprava from "./Uprava.jsx";
 import Treninzi from "./Treninzi.jsx";
+import ProbniTrening from "./ProbniTrening.jsx";
 import "./app.css";
 
 const routes = {
@@ -10,6 +11,7 @@ const routes = {
   povijest: "Povijest",
   uprava: "Uprava",
   treninzi: "Treninzi",
+  "probni-trening": "Prijavi se",
 };
 
 function getRoute() {
@@ -30,7 +32,7 @@ function Pocetna() {
               Upoznajte povijest kluba, ljude koji vode njegov rad te raspored treninga i trenere.
             </p>
             <div className="app-actions">
-              <a className="app-button app-button-primary" href="#/treninzi"><CalendarDays /> Raspored treninga</a>
+              <a className="app-button app-button-primary" href="#/probni-trening"><UserPlus /> Prijavi se za probni trening</a>
               <a className="app-button app-button-secondary" href="#/povijest"><History /> Povijest kluba</a>
             </div>
           </div>
@@ -81,7 +83,7 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
-  const content = route === "povijest" ? <Povijest /> : route === "uprava" ? <Uprava /> : route === "treninzi" ? <Treninzi /> : <Pocetna />;
+  const content = route === "povijest" ? <Povijest /> : route === "uprava" ? <Uprava /> : route === "treninzi" ? <Treninzi /> : route === "probni-trening" ? <ProbniTrening /> : <Pocetna />;
 
   return (
     <div className="app-site">
@@ -93,13 +95,14 @@ export default function App() {
             <a className={route === "povijest" ? "active" : ""} href="#/povijest"><History /> Povijest</a>
             <a className={route === "uprava" ? "active" : ""} href="#/uprava"><Users /> Uprava</a>
             <a className={route === "treninzi" ? "active" : ""} href="#/treninzi"><CalendarDays /> Treninzi</a>
+            <a className={route === "probni-trening" ? "active" : ""} href="#/probni-trening"><UserPlus /> Prijavi se</a>
           </nav>
           <button className="app-menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Otvori izbornik">{menuOpen ? <X /> : <Menu />}</button>
         </div>
-        {menuOpen && <nav className="app-mobile-nav" aria-label="Mobilna navigacija"><a href="#/pocetna"><Home /> Početna</a><a href="#/povijest"><History /> Povijest</a><a href="#/uprava"><Users /> Uprava</a><a href="#/treninzi"><CalendarDays /> Treninzi</a></nav>}
+        {menuOpen && <nav className="app-mobile-nav" aria-label="Mobilna navigacija"><a href="#/pocetna"><Home /> Početna</a><a href="#/povijest"><History /> Povijest</a><a href="#/uprava"><Users /> Uprava</a><a href="#/treninzi"><CalendarDays /> Treninzi</a><a href="#/probni-trening"><UserPlus /> Prijavi se</a></nav>}
       </header>
       {content}
-      <footer className="app-footer"><div className="app-shell app-footer-inner"><div><strong>Streličarski klub Rijeka</strong><small>Osnovan 25. prosinca 1974.</small></div><nav><a href="#/pocetna">Početna</a><a href="#/povijest">Povijest</a><a href="#/uprava">Uprava</a><a href="#/treninzi">Treninzi</a></nav><small>© {new Date().getFullYear()} Streličarski klub Rijeka</small></div></footer>
+      <footer className="app-footer"><div className="app-shell app-footer-inner"><div><strong>Streličarski klub Rijeka</strong><small>Osnovan 25. prosinca 1974.</small></div><nav><a href="#/pocetna">Početna</a><a href="#/povijest">Povijest</a><a href="#/uprava">Uprava</a><a href="#/treninzi">Treninzi</a><a href="#/probni-trening">Prijavi se</a></nav><small>© {new Date().getFullYear()} Streličarski klub Rijeka</small></div></footer>
     </div>
   );
 }
