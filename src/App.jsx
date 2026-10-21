@@ -1,6 +1,6 @@
 import React from "react";
-import Povijest from "./Povijest.jsx";
+import Uprava from "./Uprava.jsx";
 
 export default function App() {
-  return <Povijest />;
+  return <Uprava />;
 }
