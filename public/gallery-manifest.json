@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-10-22T06:49:44.823Z",
+  "photos": [
+    {
+      "src": "/images/galerija/povijest/kronika-osnivanje__portrait.jpg",
+      "kategorija": "povijest",
+      "kategorijaNaziv": "Povijest kluba",
+      "naslov": "Kronika osnivanje",
+      "opis": "Povijest kluba — Kronika osnivanje.",
+      "format": "portrait",
+      "width": 2048,
+      "height": 1536
+    },
+    {
+      "src": "/images/galerija/povijest/natjecanje-stadion__wide.png",
+      "kategorija": "povijest",
+      "kategorijaNaziv": "Povijest kluba",
+      "naslov": "Natjecanje stadion",
+      "opis": "Povijest kluba — Natjecanje stadion.",
+      "format": "wide",
+      "width": 1966,
+      "height": 806
+    },
+    {
+      "src": "/images/galerija/povijest/povijesno-okupljanje__wide.jpg",
+      "kategorija": "povijest",
+      "kategorijaNaziv": "Povijest kluba",
+      "naslov": "Povijesno okupljanje",
+      "opis": "Povijest kluba — Povijesno okupljanje.",
+      "format": "wide",
+      "width": 1968,
+      "height": 496
+    },
+    {
+      "src": "/images/galerija/povijest/skupna-fotografija.jpg",
+      "kategorija": "povijest",
+      "kategorijaNaziv": "Povijest kluba",
+      "naslov": "Skupna fotografija",
+      "opis": "Povijest kluba — Skupna fotografija.",
+      "format": "wide",
+      "width": 942,
+      "height": 541
+    }
+  ]
+}
