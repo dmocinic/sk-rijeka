@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Camera, X, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 import "./galerija.css";
 
 const kategorije = [
@@ -53,14 +53,13 @@ export default function Galerija() {
     <main className="gallery-page">
       <header className="gallery-hero"><div className="gallery-container"><p className="gallery-kicker">STRELIČARSKI KLUB RIJEKA</p><h1>Galerija</h1><p>Fotografije iz povijesti kluba, s treninga, natjecanja i klupskih događanja.</p></div></header>
       <section className="gallery-section gallery-container">
-        <div className="gallery-intro"><div><p className="gallery-kicker">KLUPSKA FOTOTEKA</p><h2>Trenuci koji čuvaju priču kluba</h2></div><p>Galerija se automatski izrađuje iz fotografija spremljenih u <code>public/images/galerija</code>.</p></div>
+        <div className="gallery-intro"><div><p className="gallery-kicker">KLUPSKA FOTOTEKA</p><h2>Trenuci koji čuvaju priču kluba</h2></div></div>
         <div className="gallery-filters">{kategorije.map((stavka) => <button key={stavka.id} className={kategorija === stavka.id ? "active" : ""} onClick={() => { setKategorija(stavka.id); setAktivna(null); }}>{stavka.naziv}</button>)}</div>
 
         {greska && <div className="gallery-empty"><ImageIcon/><h3>Galerija nije učitana</h3><p>{greska}</p></div>}
         {!greska && prikaz.length > 0 && <div className="gallery-grid">{prikaz.map((foto, indeks) => <button className={`gallery-item gallery-${foto.format}`} key={foto.src} onClick={() => setAktivna(foto)}><img src={foto.src} alt={foto.opis} loading={indeks < 3 ? "eager" : "lazy"}/><span className="gallery-overlay"><span className="gallery-category">{foto.kategorijaNaziv}</span><strong>{foto.naslov}</strong><small>{foto.opis}</small></span></button>)}</div>}
         {!greska && prikaz.length === 0 && <div className="gallery-empty"><ImageIcon/><h3>Fotografije uskoro</h3><p>U ovu kategoriju još nisu dodane fotografije.</p></div>}
       </section>
-      <section className="gallery-guide"><div className="gallery-container"><Camera/><div><h2>Automatsko dodavanje</h2><p>Postavite fotografiju u odgovarajuću mapu i napravite commit. Tijekom Cloudflare builda automatski će se izraditi novi manifest galerije.</p></div></div></section>
       {aktivna && <div className="gallery-lightbox" role="dialog" aria-modal="true" onClick={() => setAktivna(null)}><button className="gallery-close" onClick={() => setAktivna(null)}><X/></button>{prikaz.length > 1 && <button className="gallery-prev" onClick={(e) => { e.stopPropagation(); promijeni(-1); }}><ChevronLeft/></button>}<figure onClick={(e) => e.stopPropagation()}><img src={aktivna.src} alt={aktivna.opis}/><figcaption><strong>{aktivna.naslov}</strong><span>{aktivna.opis}</span></figcaption></figure>{prikaz.length > 1 && <button className="gallery-next" onClick={(e) => { e.stopPropagation(); promijeni(1); }}><ChevronRight/></button>}</div>}
     </main>
   );
