@@ -15,6 +15,13 @@ export const slugify = (value) => clean(value, 180)
   .replace(/^-+|-+$/g, "")
   .slice(0, 120);
 
+function normalizeImagePath(value) {
+  const filename = clean(value, 220)
+    .replace(/^.*[\\/]/, "")
+    .replace(/[^a-zA-Z0-9čćžšđČĆŽŠĐ._-]/g, "-");
+  return filename ? `/images/novosti/${filename}` : null;
+}
+
 export const toPublicArticle = (row) => ({
   id: row.id,
   slug: row.slug,
@@ -22,7 +29,8 @@ export const toPublicArticle = (row) => ({
   sazetak: row.summary,
   tekst: JSON.parse(row.body || "[]"),
   kategorija: row.category,
-  slika: row.image_key ? `/news-images/${encodeURIComponent(row.image_key)}` : null,
+  slika: row.image_path || null,
+  nazivSlike: row.image_path ? row.image_path.split("/").pop() : "",
   slikaAlt: row.image_alt || row.title,
   istaknuto: Boolean(row.featured),
   objavljeno: Boolean(row.published),
@@ -36,6 +44,7 @@ export function validateArticle(input) {
   const summary = clean(input.sazetak, 500);
   const category = clean(input.kategorija || "Klupske aktivnosti", 80);
   const imageAlt = clean(input.slikaAlt, 220);
+  const imagePath = normalizeImagePath(input.nazivSlike || input.slika || "");
   const paragraphs = Array.isArray(input.tekst)
     ? input.tekst.map((p) => clean(p, 4000)).filter(Boolean)
     : clean(input.tekst, 12000).split(/\n\s*\n/).map((p) => clean(p, 4000)).filter(Boolean);
@@ -49,16 +58,9 @@ export function validateArticle(input) {
   if (published && !date) return { error: "Objavljena vijest mora imati datum objave." };
   if (date && Number.isNaN(Date.parse(date))) return { error: "Datum objave nije valjan." };
 
-  return {
-    value: {
-      title,
-      summary,
-      body: JSON.stringify(paragraphs),
-      category,
-      imageAlt,
-      published: published ? 1 : 0,
-      featured: featured ? 1 : 0,
-      publishedAt: date ? new Date(date).toISOString() : null,
-    },
-  };
+  return { value: {
+    title, summary, body: JSON.stringify(paragraphs), category, imageAlt, imagePath,
+    published: published ? 1 : 0, featured: featured ? 1 : 0,
+    publishedAt: date ? new Date(date).toISOString() : null,
+  }};
 }
