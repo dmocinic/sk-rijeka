@@ -22,9 +22,14 @@ async function walk(dir) {
   return files;
 }
 
+function baseName(filename) {
+  return path.basename(filename, path.extname(filename));
+}
+
 function cleanName(filename) {
-  return path.basename(filename, path.extname(filename))
+  return baseName(filename)
     .replace(/__(wide|portrait|standard)$/i, "")
+    .replace(/^\d{4}(?:[-_]\d{2}[-_]\d{2})?[-_]+/, "")
     .replace(/[-_]+/g, " ")
     .replace(/\s+/g, " ")
     .trim()
@@ -32,8 +37,56 @@ function cleanName(filename) {
 }
 
 function forcedFormat(filename) {
-  const match = path.basename(filename, path.extname(filename)).match(/__(wide|portrait|standard)$/i);
+  const match = baseName(filename).match(/__(wide|portrait|standard)$/i);
   return match ? match[1].toLowerCase() : null;
+}
+
+function parseDate(filename) {
+  const name = baseName(filename);
+
+  // Puni datum: YYYY-MM-DD ili YYYY_MM_DD
+  const full = name.match(/^(\d{4})[-_](\d{2})[-_](\d{2})(?:[-_]|$)/);
+  if (full) {
+    const year = Number(full[1]);
+    const month = Number(full[2]);
+    const day = Number(full[3]);
+    const valid = year >= 1900 && year <= 2100 && month >= 1 && month <= 12 && day >= 1 && day <= 31;
+    if (valid) {
+      return {
+        year,
+        month,
+        day,
+        precision: "day",
+        sortValue: year * 10000 + month * 100 + day,
+        display: `${full[1]}-${full[2]}-${full[3]}`,
+      };
+    }
+  }
+
+  // Samo godina: YYYY-naziv.jpg ili YYYY_naziv.jpg
+  const yearOnly = name.match(/^(\d{4})(?:[-_]|$)/);
+  if (yearOnly) {
+    const year = Number(yearOnly[1]);
+    if (year >= 1900 && year <= 2100) {
+      return {
+        year,
+        month: null,
+        day: null,
+        precision: "year",
+        sortValue: year * 10000,
+        display: yearOnly[1],
+      };
+    }
+  }
+
+  return {
+    year: null,
+    month: null,
+    day: null,
+    precision: "none",
+    sortValue: null,
+    display: null,
+  };
 }
 
 function readPngSize(buffer) {
@@ -65,8 +118,7 @@ function readJpegSize(buffer) {
 
 function readWebpSize(buffer) {
   if (buffer.length < 30 || buffer.toString("ascii", 0, 4) !== "RIFF" || buffer.toString("ascii", 8, 12) !== "WEBP") return;
-  const type = buffer.toString("ascii", 12, 16);
-  if (type === "VP8X") {
+  if (buffer.toString("ascii", 12, 16) === "VP8X") {
     return { width: 1 + buffer.readUIntLE(24, 3), height: 1 + buffer.readUIntLE(27, 3) };
   }
 }
@@ -84,6 +136,25 @@ function autoFormat(size) {
   return "standard";
 }
 
+function comparePhotos(a, b) {
+  const aHasDate = a.datum.sortValue !== null;
+  const bHasDate = b.datum.sortValue !== null;
+
+  // Sve fotografije s datumom ili godinom dolaze prije onih bez datuma.
+  if (aHasDate !== bHasDate) return aHasDate ? -1 : 1;
+
+  if (aHasDate && bHasDate) {
+    // Najnovija godina/datum ide prva.
+    if (a.datum.sortValue !== b.datum.sortValue) return b.datum.sortValue - a.datum.sortValue;
+
+    // Unutar iste godine puni datumi dolaze prije fotografija koje imaju samo godinu.
+    if (a.datum.precision !== b.datum.precision) return a.datum.precision === "day" ? -1 : 1;
+  }
+
+  // Isti datum, ista godina ili bez datuma: abecedno po naslovu.
+  return a.naslov.localeCompare(b.naslov, "hr", { numeric: true, sensitivity: "base" });
+}
+
 try {
   await fs.mkdir(ROOT, { recursive: true });
   const files = await walk(ROOT);
@@ -93,21 +164,25 @@ try {
     const relative = path.relative(ROOT, file).split(path.sep).join("/");
     const category = relative.split("/")[0];
     const size = await dimensions(file);
+    const datum = parseDate(file);
+    const naslov = cleanName(file) || datum.display || "Fotografija";
+
     photos.push({
       src: `/images/galerija/${relative}`,
       kategorija: category,
       kategorijaNaziv: CATEGORY_LABELS[category] || cleanName(category),
-      naslov: cleanName(file),
-      opis: `${CATEGORY_LABELS[category] || cleanName(category)} — ${cleanName(file)}.`,
+      naslov,
+      opis: `${CATEGORY_LABELS[category] || cleanName(category)} — ${naslov}.`,
       format: forcedFormat(file) || autoFormat(size),
+      datum,
       width: size?.width || null,
       height: size?.height || null,
     });
   }
 
-  photos.sort((a, b) => a.kategorija.localeCompare(b.kategorija, "hr") || a.naslov.localeCompare(b.naslov, "hr"));
+  photos.sort(comparePhotos);
   await fs.writeFile(OUTPUT, JSON.stringify({ generatedAt: new Date().toISOString(), photos }, null, 2));
-  console.log(`Galerija: pronađeno ${photos.length} fotografija. Manifest: ${OUTPUT}`);
+  console.log(`Galerija: pronađeno ${photos.length} fotografija. Sortiranje: najnoviji datum/godina, zatim fotografije bez datuma.`);
 } catch (error) {
   console.error("Neuspjelo generiranje galerije:", error);
   process.exit(1);
