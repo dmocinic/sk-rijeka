@@ -1,0 +1,6 @@
+import { json } from "../../_shared.js";
+import { hasValidAdminSession } from "../../_admin-auth.js";
+export async function onRequestGet({ request, env }) {
+  const authenticated = await hasValidAdminSession(request, env.ADMIN_SESSION_SECRET);
+  return json({ ok: true, authenticated });
+}
