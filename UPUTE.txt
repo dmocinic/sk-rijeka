@@ -1,15 +1,16 @@
-PAKET ZA OBJAVU NA GRANI main
+ISPRAVLJENI PAKET ZA GRANU main
 
 1. Raspakirajte ZIP.
-2. U korijen grane main prenesite SVE datoteke iz paketa.
-3. Ako GitHub pita za zamjenu postojećeg index.html, odaberite zamjenu.
-4. Commit poruka: Dodana potvrda sluzbene domene za Google for Nonprofits
-5. Nakon Cloudflare Pages objave provjerite:
+2. Na GitHubu otvorite granu main i korijen repozitorija.
+3. Prenesite svih pet web-datoteka: index.html, sluzbena-domena.html, robots.txt, sitemap.xml i _headers.
+4. Kada GitHub pokaže da datoteke već postoje, nastavite: nove datoteke moraju zamijeniti postojeće istoimene datoteke.
+5. Commit poruka: Ispravljena stranica potvrde sluzbene domene
+6. Nakon Cloudflare Pages objave otvorite:
    https://sk-rijeka.hr/
    https://sk-rijeka.hr/sluzbena-domena.html
 
-Nije potrebno ručno mijenjati nijednu datoteku.
-Paket ne mijenja DNS, Gmail, Cloudflare Functions, D1 ni granu puna-stranica.
+Na drugoj adresi naslov mora biti:
+Službena domena Streličarskog kluba Rijeka
 
-Googleu pošaljite adresu:
-https://sk-rijeka.hr/sluzbena-domena.html
+Ako preglednik prikazuje stari sadržaj, učinite tvrdo osvježavanje Ctrl+F5 ili otvorite privatni prozor.
+Nije potrebno ručno uređivati nijednu datoteku.

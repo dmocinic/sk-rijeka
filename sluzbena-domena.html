@@ -12,106 +12,33 @@
   <meta property="og:url" content="https://sk-rijeka.hr/sluzbena-domena.html">
   <meta property="og:type" content="website">
   <style>
-    :root { --navy:#102b46; --blue:#1769aa; --gold:#d9a521; --paper:#f6f8fb; --white:#fff; --ink:#17212b; --muted:#5d6975; --line:#dbe3ea; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#edf4fa 0,#f8fafc 38%,#fff 100%); line-height:1.65; }
-    a { color:var(--blue); }
-    .topbar { height:8px; background:linear-gradient(90deg,var(--navy),var(--blue),var(--gold)); }
-    header { background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); }
-    .nav { max-width:1040px; margin:auto; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--navy); font-weight:800; letter-spacing:.01em; }
-    .mark { width:45px; height:45px; border:5px solid var(--blue); border-radius:50%; position:relative; background:#fff; box-shadow:inset 0 0 0 5px #fff, inset 0 0 0 10px var(--gold); }
-    .mark:after { content:""; position:absolute; width:22px; height:3px; background:var(--navy); right:-13px; top:16px; transform:rotate(-22deg); border-radius:2px; }
-    .home { text-decoration:none; font-weight:700; padding:9px 14px; border:1px solid var(--line); border-radius:999px; background:#fff; }
-    main { max-width:880px; margin:56px auto; padding:0 24px; }
-    .hero { background:var(--white); border:1px solid var(--line); border-radius:24px; padding:clamp(28px,6vw,58px); box-shadow:0 22px 60px rgba(16,43,70,.10); position:relative; overflow:hidden; }
-    .hero:before { content:""; position:absolute; width:240px; height:240px; border:46px solid rgba(23,105,170,.06); border-radius:50%; right:-95px; top:-90px; }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-weight:800; text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; }
-    h1 { max-width:720px; color:var(--navy); font-size:clamp(2.1rem,5vw,3.8rem); line-height:1.08; margin:16px 0 20px; }
-    .lead { font-size:clamp(1.08rem,2vw,1.28rem); color:#334353; max-width:710px; }
-    .proof { margin:30px 0 0; padding:22px 24px; border-left:5px solid var(--gold); background:#fff9e8; border-radius:0 14px 14px 0; font-size:1.08rem; }
-    .proof strong { color:var(--navy); }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:28px; }
-    .card { background:#fff; border:1px solid var(--line); border-radius:17px; padding:24px; }
-    .card h2 { color:var(--navy); font-size:1.15rem; margin:0 0 8px; }
-    .card p { margin:0; color:var(--muted); }
-    .en { margin-top:28px; background:var(--navy); color:#eaf2f8; border-radius:18px; padding:28px; }
-    .en h2 { color:#fff; margin:0 0 10px; }
-    .en p { margin:0; }
-    .status { display:flex; gap:10px; align-items:flex-start; margin-top:26px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font-size:.93rem; }
-    .dot { flex:0 0 10px; width:10px; height:10px; margin-top:7px; border-radius:50%; background:#2f9e62; box-shadow:0 0 0 5px #e8f7ef; }
-    footer { max-width:880px; margin:0 auto 48px; padding:0 24px; text-align:center; color:var(--muted); font-size:.9rem; }
-    @media (max-width:680px) { .grid{grid-template-columns:1fr}.nav{align-items:flex-start}.home{font-size:.88rem}.brand span:last-child{max-width:180px}.hero{border-radius:18px} }
+    :root{--navy:#102b46;--blue:#1769aa;--gold:#d9a521;--paper:#f6f8fb;--white:#fff;--ink:#17212b;--muted:#5d6975;--line:#dbe3ea;--green:#277a4f}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#edf4fa 0,#f8fafc 38%,#fff 100%);line-height:1.65}a{color:var(--blue)}.topbar{height:8px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--gold))}header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}.nav{max-width:1040px;margin:auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy);font-weight:800}.mark{width:45px;height:45px;border:5px solid var(--blue);border-radius:50%;position:relative;background:#fff;box-shadow:inset 0 0 0 5px #fff,inset 0 0 0 10px var(--gold)}.mark:after{content:"";position:absolute;width:22px;height:3px;background:var(--navy);right:-13px;top:16px;transform:rotate(-22deg);border-radius:2px}.home{text-decoration:none;font-weight:700;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:#fff}main{max-width:880px;margin:56px auto;padding:0 24px}.hero{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,6vw,58px);box-shadow:0 22px 60px rgba(16,43,70,.10);position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:240px;height:240px;border:46px solid rgba(23,105,170,.06);border-radius:50%;right:-95px;top:-90px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem}h1{max-width:720px;color:var(--navy);font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.08;margin:16px 0 20px}.lead{font-size:clamp(1.08rem,2vw,1.28rem);color:#334353;max-width:710px}.proof{margin:30px 0 0;padding:22px 24px;border-left:5px solid var(--gold);background:#fff9e8;border-radius:0 14px 14px 0;font-size:1.08rem}.proof strong{color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:24px}.card h2{color:var(--navy);font-size:1.15rem;margin:0 0 8px}.card p{margin:0;color:var(--muted)}.en{margin-top:28px;background:var(--navy);color:#eaf2f8;border-radius:18px;padding:28px}.en h2{color:#fff;margin:0 0 10px}.en p{margin:0}.status{display:flex;gap:10px;align-items:flex-start;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}.dot{flex:0 0 10px;width:10px;height:10px;margin-top:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #e8f7ef}footer{max-width:880px;margin:0 auto 48px;padding:0 24px;text-align:center;color:var(--muted);font-size:.9rem}@media(max-width:680px){.grid{grid-template-columns:1fr}.nav{align-items:flex-start}.home{font-size:.88rem}.brand span:last-child{max-width:180px}.hero{border-radius:18px}}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SportsOrganization",
-    "name":"Streličarski klub Rijeka",
-    "legalName":"Streličarski Klub \"Rijeka\"",
-    "alternateName":["SK Rijeka","Streličarski Klub Rijeka"],
-    "url":"https://sk-rijeka.hr/",
-    "sport":"Archery"
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsOrganization","name":"Streličarski klub Rijeka","legalName":"Streličarski Klub \"Rijeka\"","alternateName":["SK Rijeka","Streličarski Klub Rijeka"],"url":"https://sk-rijeka.hr/","sport":"Archery"}</script>
 </head>
 <body>
   <div class="topbar" aria-hidden="true"></div>
-  <header>
-    <nav class="nav" aria-label="Glavna navigacija">
-      <a class="brand" href="/" aria-label="Streličarski klub Rijeka, početna">
-        <span class="mark" aria-hidden="true"></span>
-        <span>Streličarski klub Rijeka</span>
-      </a>
-      <a class="home" href="/">Početna stranica</a>
-    </nav>
-  </header>
-
+  <header><nav class="nav" aria-label="Glavna navigacija"><a class="brand" href="/" aria-label="Streličarski klub Rijeka, početna"><span class="mark" aria-hidden="true"></span><span>Streličarski klub Rijeka</span></a><a class="home" href="/">Početna stranica</a></nav></header>
   <main>
     <section class="hero" aria-labelledby="naslov">
       <div class="eyebrow">Službena informacija kluba</div>
       <h1 id="naslov">Službena domena Streličarskog kluba Rijeka</h1>
-      <p class="lead">Ova stranica jasno potvrđuje povezanost službenog naziva kluba, njegova skraćenog naziva i internetske domene.</p>
-
-      <div class="proof">
-        <strong>sk-rijeka.hr službena je i primarna domena Streličarskog kluba „Rijeka”.</strong><br>
-        Klub se u svakodnevnoj i službenoj komunikaciji koristi i skraćenim nazivom <strong>SK Rijeka</strong>. Kratica „SK” u domeni označava „Streličarski klub”, pa naziv domene <strong>sk-rijeka.hr</strong> izravno predstavlja Streličarski klub Rijeka.
-      </div>
-
+      <p class="lead">Ova stranica potvrđuje povezanost službenog naziva kluba, skraćenog naziva i primarne internetske domene.</p>
+      <div class="proof"><strong>sk-rijeka.hr službena je i primarna domena Streličarskog kluba „Rijeka”.</strong><br>Klub se koristi i skraćenim nazivom <strong>SK Rijeka</strong>. Kratica „SK” označava „Streličarski klub”, pa domena <strong>sk-rijeka.hr</strong> izravno predstavlja Streličarski klub Rijeka.</div>
       <div class="grid">
-        <article class="card">
-          <h2>Puni naziv organizacije</h2>
-          <p>Streličarski Klub „Rijeka”</p>
-        </article>
-        <article class="card">
-          <h2>Skraćeni naziv</h2>
-          <p>SK Rijeka</p>
-        </article>
-        <article class="card">
-          <h2>Službena primarna domena</h2>
-          <p><a href="https://sk-rijeka.hr/">sk-rijeka.hr</a></p>
-        </article>
-        <article class="card">
-          <h2>Namjena domene</h2>
-          <p>Službena web-stranica, klupska komunikacija i digitalne usluge organizacije.</p>
-        </article>
+        <article class="card"><h2>Puni naziv organizacije</h2><p>Streličarski Klub „Rijeka”</p></article>
+        <article class="card"><h2>Skraćeni naziv</h2><p>SK Rijeka</p></article>
+        <article class="card"><h2>Službena primarna domena</h2><p><a href="https://sk-rijeka.hr/">sk-rijeka.hr</a></p></article>
+        <article class="card"><h2>Namjena domene</h2><p>Službena web-stranica, klupska komunikacija, Google Workspace i druge digitalne usluge organizacije.</p></article>
       </div>
-
       <section class="en" lang="en" aria-labelledby="english-heading">
         <h2 id="english-heading">Official domain confirmation</h2>
-        <p><strong>sk-rijeka.hr is the official and primary domain of Streličarski Klub “Rijeka” (Archery Club Rijeka).</strong> The club is also commonly known as <strong>SK Rijeka</strong>. The abbreviation “SK” stands for “Streličarski klub”, which directly explains and connects the domain name <strong>sk-rijeka.hr</strong> with the nonprofit organization. The domain is used for the club’s official website, organizational communication and digital services.</p>
+        <p><strong>sk-rijeka.hr is the official and primary domain of Streličarski Klub “Rijeka” (Archery Club Rijeka).</strong> The club is also commonly known as <strong>SK Rijeka</strong>. The abbreviation “SK” stands for “Streličarski klub”, which directly connects the domain name <strong>sk-rijeka.hr</strong> with the nonprofit organization. The domain is used for the club’s official website, organizational communication, Google Workspace and other digital services.</p>
       </section>
-
-      <div class="status">
-        <span class="dot" aria-hidden="true"></span>
-        <span>Dok je puna web-stranica kluba u završnoj pripremi, ova javna stranica služi kao službena potvrda identiteta i primarne domene organizacije.</span>
-      </div>
+      <div class="status"><span class="dot" aria-hidden="true"></span><span>Dok je puna web-stranica kluba u završnoj pripremi, ova javna stranica služi kao službena potvrda identiteta i primarne domene organizacije.</span></div>
     </section>
   </main>
-
-  <footer>
-    © Streličarski klub Rijeka · <a href="https://sk-rijeka.hr/">sk-rijeka.hr</a>
-  </footer>
+  <footer>© Streličarski klub Rijeka · <a href="https://sk-rijeka.hr/">sk-rijeka.hr</a></footer>
 </body>
 </html>
