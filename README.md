@@ -1,37 +1,22 @@
-# Streličarski klub Rijeka
+# Službena domena SK Rijeka
 
-React/Vite projekt pripremljen za GitHub i Cloudflare Pages.
+Paket sadrži javnu stranicu koja potvrđuje vezu:
 
-## Lokalno pokretanje
+- Streličarski Klub "Rijeka"
+- SK Rijeka
+- sk-rijeka.hr
 
-```bash
-npm install
-npm run dev
-```
+## Objavljivanje uz postojeću stranicu "U izradi"
 
-## Izgradnja
+1. U korijenu grane `main` dodajte datoteku `sluzbena-domena.html`.
+2. Nakon Cloudflare Pages objave provjerite adresu:
+   `https://sk-rijeka.hr/sluzbena-domena.html`
+3. Na postojećoj stranici "U izradi" dodajte vidljivu poveznicu iz datoteke `link-za-index.html`.
+4. Provjerite da stranica nije blokirana u `robots.txt` i da se otvara bez prijave.
+5. Googleu u objašnjenju pošaljite punu poveznicu na objavljenu stranicu.
 
-```bash
-npm run build
-```
+## Važno
 
-Izlazna mapa je `dist`.
-
-## Cloudflare Pages postavke
-
-- Framework preset: `Vite`
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: `/`
-
-## Prije javne objave
-
-1. U `src/App.jsx` zamijenite raspored treninga, Facebook poveznicu, lokaciju treninga i FAQ odgovore.
-2. Dodajte stvarne vijesti i rezultate.
-3. Obrazac je demonstracijski i ne šalje niti sprema podatke. Povežite ga s odabranim obrascem/backendom prije korištenja.
-4. Dovršite politiku privatnosti prema stvarnoj obradi osobnih podataka.
-5. Po potrebi dodajte logo i fotografije u mapu `public`.
-
-## Domena
-
-Projekt je pripremljen za domenu `sk-rijeka.hr`.
+- Ne mijenja DNS, Gmail, Cloudflare Pages Functions ni postojeći CMS.
+- Nema vanjskih biblioteka i može se postaviti kao obična statička HTML datoteka.
+- Prije objave provjerite da se službeni naziv organizacije podudara s dokumentima kluba.
