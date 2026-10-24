@@ -106,3 +106,20 @@
 .app-training-grid article.app-training-cta .app-training-location-links>a:first-child{padding:9px 12px;border:1px solid rgba(191,219,254,.42);border-radius:10px;background:rgba(255,255,255,.10)!important;color:#fff!important}
 .app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important;text-decoration:underline}
 .app-training-location-links svg{width:15px;height:15px;color:currentColor!important}
+
+/* O klubu: kontrolirano zatvaranje nakon odabira podstranice */
+.app-nav-dropdown-menu{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(-4px)!important}
+.app-nav-dropdown.open .app-nav-dropdown-menu{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:translateY(0)!important;
+}
+.app-nav-dropdown.open>button svg:last-child{transform:rotate(180deg)!important}
+/* Stari :hover/:focus-within mehanizam vise ne drzi izbornik otvorenim nakon klika. */
+.app-nav-dropdown:hover:not(.open) .app-nav-dropdown-menu,
+.app-nav-dropdown:focus-within:not(.open) .app-nav-dropdown-menu{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
