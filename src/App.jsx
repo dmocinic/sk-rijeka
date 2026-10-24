@@ -18,7 +18,18 @@ const routes = {
   rezultati: "Rezultati", galerija: "Galerija", novosti: "Novosti", kontakt: "Kontakt",
   "probni-trening": "Prijavi se", privatnost: "Politika privatnosti", admin: "Admin novosti",
 };
-const getRoute = () => { const hash = window.location.hash.replace("#/", "").replace("#", ""); return Object.hasOwn(routes, hash) ? hash : "pocetna"; };
+
+const getRoute = () => {
+  const hash = window.location.hash
+    .replace("#/", "")
+    .replace("#", "");
+
+  const baseRoute = hash.split("/")[0];
+
+  return Object.hasOwn(routes, baseRoute)
+    ? baseRoute
+    : "pocetna";
+};
 
 function Pocetna() {
   return <main>
