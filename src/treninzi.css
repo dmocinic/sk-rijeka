@@ -9,3 +9,9 @@
 }
 .training-hero .training-container{position:relative;z-index:1}
 @media(max-width:700px){.training-hero{background-position:center center!important}}
+
+/* Kompaktniji hero */
+.training-hero{padding:54px 0!important}
+.training-hero h1{font-size:clamp(3rem,6.2vw,5.5rem)!important}
+.training-hero p:last-child{font-size:1.04rem!important;line-height:1.6!important}
+@media(max-width:560px){.training-hero{padding:30px 0!important}.training-hero h1{font-size:2.8rem!important}.training-hero p:last-child{font-size:.97rem!important;line-height:1.5!important}}

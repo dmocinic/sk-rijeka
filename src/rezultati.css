@@ -9,3 +9,9 @@
 }
 .results-hero .results-container{position:relative;z-index:1}
 @media(max-width:700px){.results-hero{background-position:center center!important}}
+
+/* Kompaktniji hero */
+.results-hero{padding:54px 0!important}
+.results-hero h1{font-size:clamp(3rem,6.2vw,5.5rem)!important}
+.results-hero p:last-child{line-height:1.6!important}
+@media(max-width:560px){.results-hero{padding:30px 0!important}.results-hero h1{font-size:2.8rem!important}.results-hero p:last-child{font-size:.96rem!important;line-height:1.5!important}}

@@ -10,3 +10,10 @@
 }
 .history-hero .history-container{position:relative;z-index:1}
 @media(max-width:700px){.history-hero{background-position:center center!important}}
+
+/* Kompaktniji hero */
+.history-hero{padding:54px 0!important}
+.history-hero h1{font-size:clamp(3rem,6.2vw,5.6rem)!important}
+.history-lead{margin-top:17px!important;font-size:1.05rem!important;line-height:1.65!important}
+.history-cta{margin-top:22px!important}
+@media(max-width:560px){.history-hero{padding:32px 0!important}.history-hero h1{font-size:2.85rem!important}.history-lead{margin-top:12px!important;font-size:.98rem!important;line-height:1.55!important}.history-cta{margin-top:16px!important;padding:11px 16px!important}}

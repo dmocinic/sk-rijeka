@@ -81,3 +81,17 @@
   text-decoration:none!important;
 }
 .app-training-cta .app-location-schedule:hover{color:#173b7a!important;text-decoration:underline!important}
+
+/* Kompaktniji hero: desktop + dodatno smanjenje na mobitelu */
+.app-home-hero{padding:58px 0!important}
+.app-home-hero h1{font-size:clamp(3rem,6.2vw,5.8rem)!important}
+.app-home-lead{margin-top:18px!important;line-height:1.65!important}
+.app-actions{margin-top:24px!important}
+.app-target-image{width:min(390px,78vw)!important}
+@media(max-width:600px){
+  .app-home-hero{padding:34px 0!important}
+  .app-home-hero h1{font-size:clamp(2.55rem,13vw,3.35rem)!important}
+  .app-home-lead{margin-top:15px!important;font-size:1rem!important;line-height:1.55!important}
+  .app-actions{margin-top:18px!important}
+  .app-target-image{width:min(250px,68vw)!important}
+}
