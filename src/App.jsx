@@ -18,11 +18,11 @@ const routes = {
   rezultati: "Rezultati", galerija: "Galerija", novosti: "Novosti", kontakt: "Kontakt",
   "probni-trening": "Prijavi se", privatnost: "Politika privatnosti", admin: "Admin novosti",
 };
-const getRoute = () => { const hash = window.location.hash.replace("#/", "").replace("#", ""); return Object.hasOwn(routes, hash) ? hash : "pocetna"; };
+const getRoute = () => { const hash = window.location.hash.replace("#/", "").replace("#", ""); const baseRoute = hash.split("/")[0]; return Object.hasOwn(routes, baseRoute) ? baseRoute : "pocetna"; };
 
 function Pocetna() {
   return <main>
-    <section className="app-home-hero"><div className="app-shell app-home-grid"><div><h1>Preciznost.<br/><em>Koncentracija.</em><br/>Sport.</h1><p className="app-home-lead">Upoznajte povijest kluba, trenere i rezultate ili napravite prvi korak i prijavite se za probni trening.</p><div className="app-actions"><a className="app-button app-button-primary" href="#/probni-trening"><UserPlus/> Prijavi se za probni trening</a><a className="app-button app-button-secondary" href="#/treninzi"><CalendarDays/> Raspored treninga</a></div></div><div className="app-target"><img className="app-target-image" src="/images/hero/strelicarska-meta.jpg" alt="Streličarska meta"/></div></div></section>
+    <section className="app-home-hero"><div className="app-shell app-home-grid"><div><p className="app-kicker">STRELIČARSKI KLUB RIJEKA</p><h1>Preciznost.<br/><em>Koncentracija.</em><br/>Sport.</h1><p className="app-home-lead">Upoznajte povijest kluba, trenere i rezultate ili napravite prvi korak i prijavite se za probni trening.</p><div className="app-actions"><a className="app-button app-button-primary" href="#/probni-trening"><UserPlus/> Prijavi se za probni trening</a><a className="app-button app-button-secondary" href="#/treninzi"><CalendarDays/> Raspored treninga</a></div></div><div className="app-target"><img className="app-target-image" src="/images/hero/strelicarska-meta.jpg" alt="Streličarska meta"/></div></div></section>
 
     <NajnovijeNovosti/>
 
