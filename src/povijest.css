@@ -17,3 +17,7 @@
 .history-lead{margin-top:17px!important;font-size:1.05rem!important;line-height:1.65!important}
 .history-cta{margin-top:22px!important}
 @media(max-width:560px){.history-hero{padding:32px 0!important}.history-hero h1{font-size:2.85rem!important}.history-lead{margin-top:12px!important;font-size:.98rem!important;line-height:1.55!important}.history-cta{margin-top:16px!important;padding:11px 16px!important}}
+
+/* Hero bez ponovljenog naziva kluba */
+.history-hero{padding:42px 0!important}
+@media(max-width:560px){.history-hero{padding:22px 0!important}.history-hero h1{font-size:2.55rem!important}.history-lead{margin-top:10px!important}.history-cta{margin-top:14px!important}}

@@ -51,7 +51,7 @@ export default function Galerija() {
 
   return (
     <main className="gallery-page">
-      <header className="gallery-hero"><div className="gallery-container"><p className="gallery-kicker">STRELIČARSKI KLUB RIJEKA</p><h1>Galerija</h1><p>Fotografije iz povijesti kluba, s treninga, natjecanja i klupskih događanja.</p></div></header>
+      <header className="gallery-hero"><div className="gallery-container"><h1>Galerija</h1><p>Fotografije iz povijesti kluba, s treninga, natjecanja i klupskih događanja.</p></div></header>
       <section className="gallery-section gallery-container">
         <div className="gallery-intro"><div><p className="gallery-kicker">KLUPSKA FOTOTEKA</p><h2>Trenuci koji čuvaju priču kluba</h2></div></div>
         <div className="gallery-filters">{kategorije.map((stavka) => <button key={stavka.id} className={kategorija === stavka.id ? "active" : ""} onClick={() => { setKategorija(stavka.id); setAktivna(null); }}>{stavka.naziv}</button>)}</div>

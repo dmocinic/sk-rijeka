@@ -95,3 +95,14 @@
   .app-actions{margin-top:18px!important}
   .app-target-image{width:min(250px,68vw)!important}
 }
+
+/* Lokacija na Pocetnoj: Google Maps i kontrast */
+.app-training-grid article.app-training-cta{background:#081a35!important;border-color:#173b7a!important;color:#fff!important}
+.app-training-grid article.app-training-cta>svg{color:#8db7ff!important}
+.app-training-grid article.app-training-cta>span{color:#a9c8ff!important;opacity:1!important}
+.app-training-grid article.app-training-cta>strong{color:#fff!important;opacity:1!important}
+.app-training-location-links{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:8px}
+.app-training-grid article.app-training-cta .app-training-location-links>a{display:inline-flex;align-items:center;gap:6px;color:#bfdbfe!important;text-decoration:none;font-weight:800;opacity:1!important}
+.app-training-grid article.app-training-cta .app-training-location-links>a:first-child{padding:9px 12px;border:1px solid rgba(191,219,254,.42);border-radius:10px;background:rgba(255,255,255,.10)!important;color:#fff!important}
+.app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important;text-decoration:underline}
+.app-training-location-links svg{width:15px;height:15px;color:currentColor!important}

@@ -25,7 +25,7 @@ function PopisTijela({ naslov, clanovi }) {
 export default function Uprava() {
   return (
     <main className="uprava-page">
-      <header className="uprava-hero"><div className="uprava-container"><p className="uprava-kicker">STRELIČARSKI KLUB RIJEKA</p><h1>Uprava kluba</h1><p className="uprava-lead">Vodstvo Streličarskog kluba Rijeka izabrano je na Redovnoj izbornoj skupštini održanoj 17. srpnja 2023. Predsjednik i Upravni odbor izabrani su na mandat od četiri godine.</p></div></header>
+      <header className="uprava-hero"><div className="uprava-container"><h1>Uprava kluba</h1><p className="uprava-lead">Vodstvo Streličarskog kluba Rijeka izabrano je na Redovnoj izbornoj skupštini održanoj 17. srpnja 2023. Predsjednik i Upravni odbor izabrani su na mandat od četiri godine.</p></div></header>
 
       <section className="uprava-section uprava-container">
         <div className="uprava-heading"><p className="uprava-kicker">VODSTVO KLUBA</p><h2>Predsjednik, dopredsjednik i tajnik</h2></div>

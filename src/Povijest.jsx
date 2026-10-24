@@ -35,7 +35,7 @@ export default function Povijest() {
       <header className="history-hero">
         <div className="history-container history-hero-grid">
           <div>
-            <p className="history-kicker">STRELIČARSKI KLUB RIJEKA</p>
+            
             <h1>Povijest kluba</h1>
             <p className="history-lead">Od prvih streličarskih koraka u riječkom Torpedu do državnih prvaka, reprezentativaca i velikih međunarodnih turnira, ova kronologija prati razvoj riječkog streličarstva i djelovanje Streličarskog kluba Rijeka na temelju dostupne klupske građe.</p>
             <a className="history-cta" href="#/povijest" onClick={(event) => { event.preventDefault(); document.getElementById("vremenska-crta")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>Pogledaj vremensku crtu</a>
