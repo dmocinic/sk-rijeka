@@ -123,3 +123,59 @@
   visibility:hidden!important;
   pointer-events:none!important;
 }
+
+/* KONACNI IZGLED LOKACIJE: isti svijetli stil kao susjedne kartice */
+.app-training-grid article.app-training-cta{
+  background:#f7faff!important;
+  border:1px solid #cdddf8!important;
+  color:#0f172a!important;
+}
+.app-training-cta .app-location-map{
+  display:inline-grid!important;
+  place-items:center!important;
+  width:32px!important;
+  height:32px!important;
+  margin:0 0 2px 0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:#eef4ff!important;
+  color:#1f4fa3!important;
+  text-decoration:none!important;
+}
+.app-training-cta .app-location-map:hover{background:#dce9ff!important;color:#173b7a!important}
+.app-training-cta .app-location-map svg{width:22px!important;height:22px!important;color:currentColor!important}
+.app-training-grid article.app-training-cta>span{
+  margin-top:7px!important;
+  color:#52657f!important;
+  opacity:1!important;
+  font-size:.8rem!important;
+  font-weight:850!important;
+  text-transform:uppercase!important;
+}
+.app-training-cta .app-location-address{
+  display:inline-block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#0f172a!important;
+  background:transparent!important;
+  border:0!important;
+  font-size:1.28rem!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  text-decoration:none!important;
+}
+.app-training-cta .app-location-address:hover{color:#173b7a!important;text-decoration:underline!important;text-decoration-color:#1f4fa3!important}
+.app-training-cta .app-location-schedule{
+  display:inline-block!important;
+  margin-top:5px!important;
+  padding:0!important;
+  color:#1f4fa3!important;
+  background:transparent!important;
+  border:0!important;
+  font-weight:800!important;
+  text-decoration:none!important;
+}
+.app-training-cta .app-location-schedule:hover{color:#173b7a!important;text-decoration:underline!important}
+/* Onemoguci starije tamne/velike Google Maps stilove ako su ostali ranije u datoteci. */
+.app-training-cta .app-training-location-links{display:contents!important}
