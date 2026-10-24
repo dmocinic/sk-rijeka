@@ -1,0 +1,11 @@
+/* SK Rijeka: Kantrida hero za stranicu Treninzi */
+.training-hero{
+  background-image:
+    linear-gradient(100deg,rgba(4,13,27,.91) 0%,rgba(8,26,53,.82) 44%,rgba(23,59,122,.70) 100%),
+    url('/images/hero/kantrida-strelicarstvo.webp')!important;
+  background-size:cover!important;
+  background-position:center 50%!important;
+  background-repeat:no-repeat!important;
+}
+.training-hero .training-container{position:relative;z-index:1}
+@media(max-width:700px){.training-hero{background-position:center center!important}}
