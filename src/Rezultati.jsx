@@ -36,7 +36,7 @@ export default function Rezultati(){
       return godinaB - godinaA;
     }), [tip, q]);
   return <main className="results-page">
-    <header className="results-hero"><div className="results-container"><p className="results-kicker">SPORTSKA ARHIVA</p><h1>Rezultati</h1><p>Izbor značajnijih državnih i međunarodnih rezultata Streličarskog kluba Rijeka, sastavljen iz sačuvanih klupskih materijala i izvještaja.</p></div></header>
+    <header className="results-hero"><div className="results-container"><h1>Rezultati</h1><p>Izbor značajnijih državnih i međunarodnih rezultata Streličarskog kluba Rijeka, sastavljen iz sačuvanih klupskih materijala i izvještaja.</p></div></header>
     <section className="results-section results-container">
       <div className="results-summary"><article><Trophy/><strong>1979.–2026.</strong><span>izdvojeni rezultati u dostupnim materijalima</span></article><article><Globe2/><strong>Međunarodno</strong><span>europska i svjetska natjecanja</span></article><article><Medal/><strong>Državno</strong><span>pojedinačni i ekipni naslovi</span></article></div>
       <div className="results-toolbar"><div className="results-search"><Search/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Pretraži godinu, ime ili natjecanje"/></div><div className="results-filters">{tipovi.map(t=><button className={tip===t?"active":""} onClick={()=>setTip(t)} key={t}>{t}</button>)}</div></div>
