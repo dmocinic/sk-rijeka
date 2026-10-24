@@ -34,6 +34,3 @@
 .app-training-grid article.app-training-cta .app-training-location-links>a:first-child{padding:9px 12px;border:1px solid rgba(191,219,254,.42);border-radius:10px;background:rgba(255,255,255,.10)!important;color:#fff!important}
 .app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important;text-decoration:underline}
 .app-training-location-links svg{width:15px;height:15px;color:currentColor!important}
-
-/* O klubu: dropdown se ne zadrzava otvoren nakon odabira stavke */
-.app-nav-dropdown-menu a:focus{outline:2px solid #bfdbfe;outline-offset:2px}
