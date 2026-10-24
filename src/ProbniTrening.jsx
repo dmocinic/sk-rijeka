@@ -147,7 +147,7 @@ export default function ProbniTrening() {
 
             <button type="submit" disabled={sending || !token}>{sending ? "Slanje…" : "Pošalji prijavu"}</button>
             {status.message && <p className={`trial-status ${status.type}`} role="status">{status.message}</p>}
-            <p className="trial-form-note">Obrazac je zaštićen Cloudflare Turnstile provjerom. Podaci se šalju klubu e-mailom i ne spremaju se u zasebnu bazu ove web-stranice.</p>
+            <p className="trial-form-note">Podaci iz obrasca koriste se radi odgovora na prijavu za probni trening, u skladu s Politikom privatnosti.</p>
           </form>
         </div>
       </section>

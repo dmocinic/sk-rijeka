@@ -41,7 +41,7 @@ export default function Rezultati(){
       <div className="results-summary"><article><Trophy/><strong>1979.–2026.</strong><span>izdvojeni rezultati u dostupnim materijalima</span></article><article><Globe2/><strong>Međunarodno</strong><span>europska i svjetska natjecanja</span></article><article><Medal/><strong>Državno</strong><span>pojedinačni i ekipni naslovi</span></article></div>
       <div className="results-toolbar"><div className="results-search"><Search/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Pretraži godinu, ime ili natjecanje"/></div><div className="results-filters">{tipovi.map(t=><button className={tip===t?"active":""} onClick={()=>setTip(t)} key={t}>{t}</button>)}</div></div>
       <div className="results-list">{prikaz.map(r=><article key={`${r.godina}-${r.naslov}`}><div className="results-year">{r.godina}</div><div><span className="results-type">{r.tip}</span><h2>{r.naslov}</h2><p>{r.detalj}</p></div></article>)}</div>
-      <aside className="results-note">Ovo je izbor značajnijih rezultata, a ne potpuni popis svih nastupa, medalja i plasmana kluba. Arhivu možemo postupno dopunjavati novim službenim rezultatima.</aside>
+      <aside className="results-note">Prikazan je izbor značajnijih rezultata iz dostupne klupske arhive.</aside>
     </section>
   </main>
 }
