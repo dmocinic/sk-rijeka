@@ -1,0 +1,35 @@
+/* Autorska fotografija SK Rijeka: streličarski turnir na Kantridi */
+:root{--skr-kantrida-image:url('/images/hero/kantrida-strelicarstvo.webp')}
+
+/* Fotografija ostaje diskretna. Navy overlay čuva čitljivost i postojeću čistu plavu temu. */
+.training-hero{
+  background-image:
+    linear-gradient(100deg,rgba(4,13,27,.94) 0%,rgba(8,26,53,.88) 42%,rgba(23,59,122,.78) 100%),
+    var(--skr-kantrida-image)!important;
+  background-size:cover!important;
+  background-position:center 48%!important;
+  background-repeat:no-repeat!important;
+}
+
+.history-hero{
+  background-image:
+    linear-gradient(100deg,rgba(4,13,27,.95) 0%,rgba(8,26,53,.90) 48%,rgba(31,79,163,.78) 100%),
+    var(--skr-kantrida-image)!important;
+  background-size:cover!important;
+  background-position:center 45%!important;
+  background-repeat:no-repeat!important;
+}
+
+/* Rezultati dobivaju još diskretniju varijantu iste autorske fotografije. */
+.results-hero{
+  background-image:
+    linear-gradient(100deg,rgba(4,13,27,.97) 0%,rgba(8,26,53,.93) 48%,rgba(23,59,122,.84) 100%),
+    var(--skr-kantrida-image)!important;
+  background-size:cover!important;
+  background-position:center 52%!important;
+  background-repeat:no-repeat!important;
+}
+
+@media(max-width:700px){
+  .training-hero,.history-hero,.results-hero{background-position:center center!important}
+}
