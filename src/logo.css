@@ -1,0 +1,16 @@
+/* SK Rijeka - službeni znak u zaglavlju */
+.app-brand-logo {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .app-brand-logo {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+}
