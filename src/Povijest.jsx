@@ -38,23 +38,18 @@ export default function Povijest() {
             <p className="history-kicker">STRELIČARSKI KLUB RIJEKA</p>
             <h1>Povijest kluba</h1>
             <p className="history-lead">Od prvih streličarskih koraka u riječkom Torpedu do državnih prvaka, reprezentativaca i velikih međunarodnih turnira, ova kronologija prati razvoj riječkog streličarstva i djelovanje Streličarskog kluba Rijeka na temelju dostupne klupske građe.</p>
-            <a className="history-cta" href="#vremenska-crta">Pogledaj vremensku crtu</a>
+            <a className="history-cta" href="#/povijest" onClick={(event) => { event.preventDefault(); document.getElementById("vremenska-crta")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>Pogledaj vremensku crtu</a>
           </div>
-          <figure className="history-chronicle">
-            <img src="/images/kronika-osnivanje.jpg" alt="Stranica klupske kronike o osnivanju Streličarskog kluba Rijeka" />
-            <figcaption>Izvorni zapis iz klupske kronike</figcaption>
-          </figure>
         </div>
       </header>
 
       <section className="history-section history-container">
-        <p className="history-kicker">PRIJE FORMALNOG OSNIVANJA</p>
+        <p className="history-kicker">POČECI RIJEČKOG STRELIČARSTVA</p>
         <h2>Počeci riječkog streličarstva</h2>
         <div className="history-columns">
           <p>Korijeni riječkog streličarstva sežu u pedesete godine 20. stoljeća, kada se gađanje lukom i strijelom počelo razvijati kao sportska aktivnost u riječkoj Tvornici traktora i motora „Torpedo”.</p>
           <p>Važnu ulogu imao je Rade Milinković, uspješan riječki strijelac i sportski djelatnik. U suradnji s Nikolom Škorićem iz Zagreba upoznao se sa sportskim streličarstvom te potaknuo prve organizirane treninge u Rijeci.</p>
         </div>
-        <aside className="history-note">Dostupna klupska građa različito opisuje pojedine etape organizacijskog razvoja riječkog streličarstva. Točan datum osnivanja kluba bit će naveden nakon dodatne provjere izvornih dokumenata.</aside>
       </section>
 
       <section className="history-section history-container">
