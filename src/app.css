@@ -35,49 +35,5 @@
 .app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important;text-decoration:underline}
 .app-training-location-links svg{width:15px;height:15px;color:currentColor!important}
 
-
-/* ZAVRSNI IZGLED LOKACIJE: svijetla kartica + diskretan Google Maps link */
-.app-training-grid article.app-training-cta{
-  background:#f7faff!important;
-  border-color:#cdddf8!important;
-  color:#0f172a!important;
-}
-.app-training-cta .app-location-map{
-  display:inline-grid!important;
-  place-items:center;
-  width:34px;
-  height:34px;
-  margin:0 0 2px 0!important;
-  padding:0!important;
-  border:0!important;
-  border-radius:50%;
-  background:#eef4ff!important;
-  color:#1f4fa3!important;
-  text-decoration:none!important;
-}
-.app-training-cta .app-location-map svg{width:25px!important;height:25px!important;color:#1f4fa3!important}
-.app-training-grid article.app-training-cta>span{color:#52657f!important;opacity:1!important}
-.app-training-cta .app-location-address{
-  display:inline-block!important;
-  margin:0!important;
-  padding:0!important;
-  color:#0f172a!important;
-  background:transparent!important;
-  border:0!important;
-  font-size:1.28rem;
-  line-height:1.3;
-  font-weight:800;
-  text-decoration:none!important;
-}
-.app-training-cta .app-location-address:hover{color:#173b7a!important;text-decoration:underline!important;text-decoration-color:#1f4fa3!important}
-.app-training-cta .app-location-schedule{
-  display:inline-block!important;
-  margin-top:5px!important;
-  padding:0!important;
-  color:#1f4fa3!important;
-  background:transparent!important;
-  border:0!important;
-  font-weight:800;
-  text-decoration:none!important;
-}
-.app-training-cta .app-location-schedule:hover{color:#173b7a!important;text-decoration:underline!important}
+/* O klubu: dropdown se ne zadrzava otvoren nakon odabira stavke */
+.app-nav-dropdown-menu a:focus{outline:2px solid #bfdbfe;outline-offset:2px}
