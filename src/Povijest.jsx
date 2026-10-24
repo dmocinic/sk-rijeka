@@ -4,7 +4,6 @@ import "./povijest.css";
 const timeline = [
   { year: "1950-e", title: "Prvi koraci riječkog streličarstva", text: "Počeci organiziranog sportskog gađanja lukom i strijelom u Rijeci vezani su uz sportske aktivnosti u Tvornici traktora i motora Torpedo te uz djelovanje Rade Milinkovića." },
   { year: "1966.", title: "Međunarodno natjecanje u Rijeci", text: "U Rijeci se održava međunarodno streličarsko natjecanje, a riječkim streličarima znanje prenosi poljski trener V. Novakowski." },
-  { year: "25. 12. 1974.", title: "Osnivanje Streličarskog kluba Rijeka", text: "Za predsjednika je izabran Rade Milinković, za podpredsjednika Josip Šarić, a za tajnika Mirko Kolić." },
   { year: "1976.", title: "Prvi veliki uspjesi mladih", text: "Najmlađa riječka momčad osvaja momčadsko zlato na međunarodnom turniru na Kantridi i naslov državnog prvaka u kategoriji dječaka do 14 godina." },
   { year: "1977.–1978.", title: "Rijeka domaćin europskih susreta", text: "Na Krimeji se održavaju veliki međunarodni susreti nacija, uz nastupe istaknutih europskih streličara." },
   { year: "1979.", title: "Braća Šarić na međunarodnoj sceni", text: "Siniša i Hrvoje Šarić osvajaju prvo i drugo mjesto na Kupu nacija u Mađarskoj te nastupaju na Europskom juniorskom prvenstvu u Portugalu." },
@@ -38,7 +37,7 @@ export default function Povijest() {
           <div>
             <p className="history-kicker">STRELIČARSKI KLUB RIJEKA</p>
             <h1>Povijest kluba</h1>
-            <p className="history-lead">Od prvih streličarskih koraka u riječkom Torpedu do državnih prvaka, reprezentativaca i velikih međunarodnih turnira, povijest kluba priča je o radu, koncentraciji, prijateljstvu i generacijama koje su odrastale uz luk i strijelu.</p>
+            <p className="history-lead">Od prvih streličarskih koraka u riječkom Torpedu do državnih prvaka, reprezentativaca i velikih međunarodnih turnira, ova kronologija prati razvoj riječkog streličarstva i djelovanje Streličarskog kluba Rijeka na temelju dostupne klupske građe.</p>
             <a className="history-cta" href="#vremenska-crta">Pogledaj vremensku crtu</a>
           </div>
           <figure className="history-chronicle">
@@ -55,18 +54,7 @@ export default function Povijest() {
           <p>Korijeni riječkog streličarstva sežu u pedesete godine 20. stoljeća, kada se gađanje lukom i strijelom počelo razvijati kao sportska aktivnost u riječkoj Tvornici traktora i motora „Torpedo”.</p>
           <p>Važnu ulogu imao je Rade Milinković, uspješan riječki strijelac i sportski djelatnik. U suradnji s Nikolom Škorićem iz Zagreba upoznao se sa sportskim streličarstvom te potaknuo prve organizirane treninge u Rijeci.</p>
         </div>
-        <aside className="history-note">Povijest organiziranog streličarstva u Rijeci počinje prije pravne povijesti današnjeg kluba. Formalno osnivanje Streličarskog kluba Rijeka zabilježeno je 25. prosinca 1974. godine.</aside>
-      </section>
-
-      <section className="history-section history-section-dark">
-        <div className="history-container history-founding">
-          <div><p className="history-kicker">25. PROSINCA 1974.</p><h2>Osnivanje Streličarskog kluba Rijeka</h2><p>Na osnivačkoj skupštini izabrano je prvo vodstvo kluba. Time je otvoreno novo poglavlje organiziranog streličarstva u Rijeci.</p></div>
-          <div className="history-leadership">
-            <article><span>Predsjednik</span><strong>Rade Milinković</strong></article>
-            <article><span>Podpredsjednik</span><strong>Josip Šarić</strong></article>
-            <article><span>Tajnik</span><strong>Mirko Kolić</strong></article>
-          </div>
-        </div>
+        <aside className="history-note">Dostupna klupska građa različito opisuje pojedine etape organizacijskog razvoja riječkog streličarstva. Točan datum osnivanja kluba bit će naveden nakon dodatne provjere izvornih dokumenata.</aside>
       </section>
 
       <section className="history-section history-container">
