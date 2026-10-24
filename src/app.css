@@ -24,24 +24,13 @@
 :root{--skr-blue:#1f4fa3;--skr-blue-dark:#173b7a;--skr-navy:#081a35;--skr-blue-soft:#eef4ff;--skr-blue-line:#cdddf8;--skr-red:#dc2626}
 .app-home-hero{background:radial-gradient(circle at 82% 22%,#255db4 0,#173b7a 28%,#081a35 70%,#040d1b 100%)!important}.app-kicker{color:#1f4fa3!important}.app-home-hero .app-kicker{color:#8db7ff!important}.app-home-hero h1 em{color:#4f8df7!important}.app-nav>a:hover,.app-nav>a.active,.app-nav-dropdown:hover>button,.app-nav-dropdown.active>button{background:#eef4ff!important;color:#1f4fa3!important}.app-nav-dropdown-menu a:hover{background:#eef4ff!important;color:#1f4fa3!important}.app-nav-cta,.app-mobile-cta{background:#dc2626!important;color:#fff!important}.app-training-grid article{border-color:#cdddf8!important;background:#f7faff!important}.app-training-grid svg,.app-feature-card>svg,.app-contact-links svg{color:#1f4fa3!important}.app-training-cta{background:#081a35!important}.app-home-links{background:#f5f8fd!important}.app-feature-card strong{color:#1f4fa3!important}.app-footer{background:#081a35!important;color:#fff!important}.app-footer a{color:#dce7f8!important}.app-footer small{color:#aebeda!important}.app-footer a:hover{color:#8db7ff!important}
 
-/* FIX KONTRASTA: kartica Lokacija na Pocetnoj */
-.app-training-grid article.app-training-cta{
-  background:#081a35!important;
-  border-color:#173b7a!important;
-  color:#fff!important;
-}
+/* Lokacija na Pocetnoj: Google Maps + siguran kontrast */
+.app-training-grid article.app-training-cta{background:#081a35!important;border-color:#173b7a!important;color:#fff!important}
 .app-training-grid article.app-training-cta>svg{color:#8db7ff!important}
 .app-training-grid article.app-training-cta>span{color:#a9c8ff!important;opacity:1!important}
 .app-training-grid article.app-training-cta>strong{color:#fff!important;opacity:1!important}
-.app-training-grid article.app-training-cta>a,
-.app-training-grid article.app-training-cta .app-training-location-links>a{
-  color:#bfdbfe!important;
-  opacity:1!important;
-}
-.app-training-grid article.app-training-cta>a:hover,
-.app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important}
-.app-training-grid article.app-training-cta .app-training-location-links>a:first-child{
-  background:rgba(255,255,255,.10)!important;
-  border-color:rgba(191,219,254,.42)!important;
-  color:#fff!important;
-}
+.app-training-location-links{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:8px}
+.app-training-grid article.app-training-cta .app-training-location-links>a{display:inline-flex;align-items:center;gap:6px;color:#bfdbfe!important;text-decoration:none;font-weight:800;opacity:1!important}
+.app-training-grid article.app-training-cta .app-training-location-links>a:first-child{padding:9px 12px;border:1px solid rgba(191,219,254,.42);border-radius:10px;background:rgba(255,255,255,.10)!important;color:#fff!important}
+.app-training-grid article.app-training-cta .app-training-location-links>a:hover{color:#fff!important;text-decoration:underline}
+.app-training-location-links svg{width:15px;height:15px;color:currentColor!important}
