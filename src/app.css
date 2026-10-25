@@ -192,3 +192,28 @@
   .app-nav-dropdown:hover>button svg:last-child,
   .app-nav-dropdown.open>button svg:last-child{transform:rotate(180deg)!important}
 }
+
+/* O klubu: uklonjena mrtva zona izmedu gumba i podizbornika */
+@media(min-width:981px){
+  .app-nav-dropdown{padding-bottom:8px!important;margin-bottom:-8px!important}
+  .app-nav-dropdown-menu{
+    top:100%!important;
+    margin-top:0!important;
+  }
+  .app-nav-dropdown-menu::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:-8px;
+    height:8px;
+    background:transparent;
+  }
+  .app-nav-dropdown:hover .app-nav-dropdown-menu,
+  .app-nav-dropdown.open .app-nav-dropdown-menu{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+}
