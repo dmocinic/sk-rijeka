@@ -1,0 +1,68 @@
+/*
+  SK Rijeka - jedinstvena visina hero sekcija svih podstranica.
+  Početna (.app-home-hero) namjerno nije obuhvaćena.
+*/
+:root{
+  --skr-subpage-hero-height:230px;
+  --skr-subpage-hero-height-mobile:190px;
+}
+
+.history-hero,
+.uprava-hero,
+.training-hero,
+.results-hero,
+.gallery-hero,
+.news-hero,
+.contact-hero,
+.trial-hero,
+.privacy-hero{
+  box-sizing:border-box!important;
+  height:var(--skr-subpage-hero-height)!important;
+  min-height:var(--skr-subpage-hero-height)!important;
+  max-height:var(--skr-subpage-hero-height)!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.history-hero>.history-container,
+.uprava-hero>.uprava-container,
+.training-hero>.training-container,
+.results-hero>.results-container,
+.gallery-hero>.gallery-container,
+.news-hero>.news-container,
+.contact-hero>.contact-container,
+.trial-hero>.trial-container,
+.privacy-hero>.privacy-container{
+  width:100%;
+}
+
+/* Neutralizira vanjske margine prvog i zadnjeg elementa koje su prije mijenjale dojam visine. */
+.history-hero h1,.uprava-hero h1,.training-hero h1,.results-hero h1,
+.gallery-hero h1,.news-hero h1,.contact-hero h1,.trial-hero h1,.privacy-hero h1{
+  margin-top:0!important;
+}
+
+.history-hero p:last-child,.uprava-hero p:last-child,.training-hero p:last-child,
+.results-hero p:last-child,.gallery-hero p:last-child,.news-hero p:last-child,
+.contact-hero p:last-child,.trial-hero p:last-child,.privacy-hero p:last-child{
+  margin-bottom:0!important;
+}
+
+@media(max-width:620px){
+  .history-hero,
+  .uprava-hero,
+  .training-hero,
+  .results-hero,
+  .gallery-hero,
+  .news-hero,
+  .contact-hero,
+  .trial-hero,
+  .privacy-hero{
+    height:var(--skr-subpage-hero-height-mobile)!important;
+    min-height:var(--skr-subpage-hero-height-mobile)!important;
+    max-height:var(--skr-subpage-hero-height-mobile)!important;
+  }
+}
