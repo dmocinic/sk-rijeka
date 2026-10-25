@@ -179,3 +179,16 @@
 .app-training-cta .app-location-schedule:hover{color:#173b7a!important;text-decoration:underline!important}
 /* Onemoguci starije tamne/velike Google Maps stilove ako su ostali ranije u datoteci. */
 .app-training-cta .app-training-location-links{display:contents!important}
+
+/* O klubu: desktop otvaranje na hover i automatsko zatvaranje po izlasku misa */
+@media(min-width:981px){
+  .app-nav-dropdown:hover .app-nav-dropdown-menu,
+  .app-nav-dropdown.open .app-nav-dropdown-menu{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+  .app-nav-dropdown:hover>button svg:last-child,
+  .app-nav-dropdown.open>button svg:last-child{transform:rotate(180deg)!important}
+}
