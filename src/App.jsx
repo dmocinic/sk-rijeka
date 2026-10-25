@@ -12,6 +12,7 @@ import Novosti from "./Novosti.jsx";
 import AdminNovosti from "./AdminNovosti.jsx";
 import NajnovijeNovosti from "./NajnovijeNovosti.jsx";
 import "./app.css";
+import "./hero-uniform.css";
 
 const routes = {
   pocetna: "Početna", povijest: "Povijest", uprava: "Uprava", treninzi: "Treninzi",
