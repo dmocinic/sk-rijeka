@@ -1,6 +1,6 @@
 /*
-  SK Rijeka - jedinstvena visina hero sekcija svih podstranica.
-  Početna (.app-home-hero) namjerno nije obuhvaćena.
+  SK Rijeka - jedinstvena visina hero sekcija podstranica, V2.
+  Početna (.app-home-hero) nije obuhvaćena.
 */
 :root{
   --skr-subpage-hero-height:230px;
@@ -23,10 +23,15 @@
   padding-top:0!important;
   padding-bottom:0!important;
   overflow:hidden;
-  display:flex;
-  align-items:center;
+  display:flex!important;
+  align-items:center!important;
 }
 
+/*
+  VAŽNO: ne postavljamo width:100% na unutarnje containere.
+  Time zadržavamo njihove postojeće max-width i auto margine,
+  pa su hero tekstovi poravnati s ostatkom sadržaja stranice.
+*/
 .history-hero>.history-container,
 .uprava-hero>.uprava-container,
 .training-hero>.training-container,
@@ -36,10 +41,11 @@
 .contact-hero>.contact-container,
 .trial-hero>.trial-container,
 .privacy-hero>.privacy-container{
-  width:100%;
+  box-sizing:border-box!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
 }
 
-/* Neutralizira vanjske margine prvog i zadnjeg elementa koje su prije mijenjale dojam visine. */
 .history-hero h1,.uprava-hero h1,.training-hero h1,.results-hero h1,
 .gallery-hero h1,.news-hero h1,.contact-hero h1,.trial-hero h1,.privacy-hero h1{
   margin-top:0!important;
