@@ -37,7 +37,7 @@ export default function Povijest() {
           <div>
             
             <h1>Povijest kluba</h1>
-            <p className="history-lead">Od prvih streličarskih koraka u riječkom Torpedu do državnih prvaka, reprezentativaca i velikih međunarodnih turnira, ova kronologija prati razvoj riječkog streličarstva i djelovanje Streličarskog kluba Rijeka na temelju dostupne klupske građe.</p>
+            <p className="history-lead">Upoznajte povijest riječkog streličarstva, klupske generacije, rezultate i trenutke koji su oblikovali SK Rijeka.</p>
             <a className="history-cta" href="#/povijest" onClick={(event) => { event.preventDefault(); document.getElementById("vremenska-crta")?.scrollIntoView({ behavior: "smooth", block: "start" }); }}>Pogledaj vremensku crtu</a>
           </div>
         </div>
