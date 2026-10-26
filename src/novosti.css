@@ -8,3 +8,19 @@
 /* Hero bez ponovljenog naziva kluba */
 .news-hero{padding:42px 0!important}
 @media(max-width:620px){.news-hero{padding:22px 0!important}.news-hero h1{font-size:2.55rem!important}.news-hero>div>p:last-child{margin-bottom:0!important}}
+
+/* Puni tekst vijesti: cuvaj prijelome redaka unesene u CMS-u */
+.news-body-paragraph{
+  white-space:pre-line;
+  overflow-wrap:anywhere;
+}
+
+/* Citljiviji i kompaktniji puni clanak na mobitelu */
+@media(max-width:620px){
+  .news-detail{padding:34px 0 48px!important}
+  .news-detail h1{font-size:clamp(2rem,9.5vw,2.75rem);line-height:1.08;margin:16px 0 20px}
+  .news-detail img{border-radius:16px;max-height:420px}
+  .news-detail .news-lead{font-size:1.08rem!important;line-height:1.6!important;margin:22px 0!important}
+  .news-detail .news-body-paragraph{font-size:1.0625rem!important;line-height:1.7!important;margin:0 0 20px!important}
+  .news-detail .news-meta{gap:12px;flex-wrap:wrap}
+}
